@@ -4,7 +4,7 @@ function App() {
   const [backendMessage, setBackendMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/")
+    fetch(import.meta.env.VITE_BACKEND_URL)
       .then((res) => res.json())
       .then((data) => setBackendMessage(data.message))
       .catch(() => setBackendMessage("Backend not reachable"));
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;     // <-- THIS LINE WAS MISSING
