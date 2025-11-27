@@ -12,8 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy backend code
 COPY . /app
 
-# Expose port Flask runs on
-EXPOSE 5000
+# Expose port (Cloud Run requires PORT environment variable)
+EXPOSE 8080
 
-# Run the Flask app
-CMD ["python", "app.py"]
+# Run with Gunicorn for production
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app

@@ -1,0 +1,41 @@
+# This file specifies files that are not uploaded to Cloud Build
+# https://cloud.google.com/build/docs/configuring-builds/build-config-file-schema
+
+# Git files
+.git
+.gitignore
+.github
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker files (we build from source)
+Dockerfile
+docker-compose.yml
+
+# Documentation
+README.md
+*.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
