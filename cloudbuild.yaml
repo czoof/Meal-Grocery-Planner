@@ -19,3 +19,5 @@ steps:
 
 images: ['gcr.io/$PROJECT_ID/meal-backend', 'gcr.io/$PROJECT_ID/meal-frontend']
 timeout: '1800s'
+options:
+  logging: CLOUD_LOGGING_ONLY
