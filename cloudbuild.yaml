@@ -5,8 +5,6 @@ steps:
       - 'build'
       - '-t'
       - 'gcr.io/$PROJECT_ID/meal-backend:latest'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/meal-backend:$SHORT_SHA'
       - './backend'
     id: 'build-backend'
 
@@ -16,8 +14,6 @@ steps:
       - 'build'
       - '-t'
       - 'gcr.io/$PROJECT_ID/meal-frontend:latest'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/meal-frontend:$SHORT_SHA'
       - './frontend'
     id: 'build-frontend'
 
@@ -36,16 +32,6 @@ steps:
     id: 'push-frontend'
 
   # Step 5: Deploy Backend to Cloud Run
-  - name: 'gcr.io/cloud-builders/gke-deploy'
-    args:
-      - 'run'
-      - '--filename=.'
-      - '--image=gcr.io/$PROJECT_ID/meal-backend:latest'
-      - '--location=us-central1'
-      - '--output=/workspace/deploy/'
-    id: 'deploy-backend'
-    
-  # Step 6: Deploy Backend using gcloud
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
@@ -57,9 +43,9 @@ steps:
       - '--allow-unauthenticated'
       - '--port=8080'
       - '--set-env-vars=PORT=8080'
-    id: 'deploy-backend-service'
+    id: 'deploy-backend'
 
-  # Step 7: Get Backend URL and deploy frontend with it
+  # Step 6: Deploy Frontend to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
@@ -70,17 +56,10 @@ steps:
       - '--region=us-central1'
       - '--allow-unauthenticated'
       - '--port=5173'
-      - '--set-env-vars=VITE_BACKEND_URL=https://meal-backend-REGION-PROJECT_ID.run.app/'
-    id: 'deploy-frontend-service'
+    id: 'deploy-frontend'
 
-# Store the images in Container Registry
 images:
   - 'gcr.io/$PROJECT_ID/meal-backend:latest'
   - 'gcr.io/$PROJECT_ID/meal-frontend:latest'
 
-# Build timeout
 timeout: '1800s'
-
-# Build options
-options:
-  machineType: 'N1_HIGHCPU_8'
