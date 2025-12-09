@@ -1,42 +1,224 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Enhanced App.css for beautiful UI */
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #181a1b;
+  color: #f3f3f3;
+}
+
+
+
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem 1rem 2rem;
+  background: #232526;
+  border-bottom: 2px solid #333;
+}
+.header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 2rem;
+  background: #232526;
+  border-bottom: 1px solid #333;
+  font-size: 1.1rem;
+}
+.status-label {
+  font-weight: bold;
+}
+.status-ok {
+  color: #4caf50;
+  font-weight: bold;
+}
+.status-bad {
+  color: #ff5252;
+  font-weight: bold;
+}
+
+.section-divider {
+  border: none;
+  border-top: 2px solid #333;
+  margin: 2rem 0 1.5rem 0;
+}
+
+
+
+.content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem auto 0 auto;
+  align-items: stretch;
 }
 
 .card {
-  padding: 2em;
+  background: #232526;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
-.read-the-docs {
-  color: #888;
+.meal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.meal-table td {
+  padding: 0.6rem 0.2rem;
+  font-size: 1.1rem;
+}
+.meal-input {
+  width: 90%;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #181a1b;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.recipe-input, .favorite-input {
+  flex: 1;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #181a1b;
+  color: #fff;
+  font-size: 1rem;
+}
+button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(76,175,80,0.08);
+}
+button:hover {
+  background: #388e3c;
+}
+.generate-btn {
+  margin-bottom: 1rem;
+  background: #2196f3;
+  font-weight: 600;
+}
+.generate-btn:hover {
+  background: #1565c0;
+}
+
+.list, .grocery-list-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list li, .grocery-list-ul li {
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 0.3rem;
+  border-radius: 6px;
+  background: #292b2c;
+  transition: background 0.2s;
+  font-size: 1.1rem;
+}
+.grocery-list-ul li {
+  cursor: pointer;
+}
+.grocery-list-ul li.checked {
+  text-decoration: line-through;
+  background: #4caf50;
+  color: #fff;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem 0;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.ai-suggestion {
+  background: #232526;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ai-result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2196f3;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .content-grid {
+    padding: 1rem;
+    max-width: 100vw;
+  }
+  .card {
+    padding: 1rem;
+    width: 100%;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
 }
