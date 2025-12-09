@@ -71,3 +71,43 @@ Examples of AI assistance:
 - Add form for adding meals
 - Store meals in MySQL
 - Add CI/CD pipeline
+
+---
+
+## 🌐 Deployed Application
+Your live backend is deployed on Google Cloud Run:
+**URL:** [https://meal-planner-122732189394.us-central1.run.app](https://meal-planner-122732189394.us-central1.run.app)
+
+Your live frontend is deployed on Google Cloud Run:
+**URL:** [https://meal-planner-frontend-122732189394.us-central1.run.app](https://meal-planner-frontend-122732189394.us-central1.run.app)
+
+---
+
+## 📝 Submission Links
+- **GitHub Repository:** [https://github.com/czoof/Meal-Grocery-Planner](https://github.com/czoof/Meal-Grocery-Planner)
+- **Jira Project:** [https://charleszoof.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible](https://charleszoof.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible)
+- **Confluence Space:** [https://charleszoof.atlassian.net/wiki/spaces/MGPD/pages/196739/Project+Overview](https://charleszoof.atlassian.net/wiki/spaces/MGPD/pages/196739/Project+Overview)
+
+---
+
+## 📋 CI/CD Pipeline
+Automated tests and deployment are handled by GitHub Actions. On every push to `main`:
+- Backend and frontend tests run
+- If tests pass, code is deployed to Google Cloud Run
+
+See `.github/workflows/ci-cd.yml` for details.
+
+---
+
+## 📚 Documentation & Project Management
+- **Jira:** Sprints, user stories, and tasks are tracked and publicly viewable
+- **Confluence:** Project overview, sprint retrospectives, and technical documentation
+
+---
+
+## 🏁 How to Submit
+Submit the following links:
+1. GitHub repository (with branches, commits, and README)
+2. Deployed Cloud Run URLs (frontend & backend)
+3. Jira project URL (public)
+4. Confluence space URL (public)
