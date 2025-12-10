@@ -1,9 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/meal-backend', './backend']
+    args: ['build', '--no-cache', '-t', 'gcr.io/$PROJECT_ID/meal-backend', './backend']
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/meal-frontend', './frontend']
+    args: ['build', '--no-cache', '-t', 'gcr.io/$PROJECT_ID/meal-frontend', './frontend']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/meal-backend']
