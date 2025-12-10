@@ -15,5 +15,7 @@ RUN pip install --upgrade pip
 # Install Python dependencies (mysqlclient can now build)
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5000
+# Cloud Run expects the service to listen on $PORT (8080)
+ENV PORT=8080
+EXPOSE 8080
 CMD ["python", "app.py"]
