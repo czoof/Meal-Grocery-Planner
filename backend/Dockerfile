@@ -2,7 +2,7 @@
 FROM python:3.10
 
 RUN apt-get update
-RUN apt-get install -y gcc default-libmysqlclient-dev libmariadb-dev-compat libmariadb-dev build-essential pkg-config
+RUN apt-get install -y pkg-config default-libmysqlclient-dev
 RUN which pkg-config && pkg-config --version
 
 WORKDIR /app
