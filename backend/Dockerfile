@@ -15,4 +15,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Use gunicorn to serve the Flask app; ensure it binds to the PORT env var
-CMD exec gunicorn -w 2 -b :$PORT app:app
+CMD exec gunicorn -w 2 -b 0.0.0.0:$PORT app:app
