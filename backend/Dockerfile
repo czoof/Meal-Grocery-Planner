@@ -1,8 +1,9 @@
 
 FROM python:3.10
 
-# Install all system dependencies for mysqlclient
-RUN apt-get update && apt-get install -y gcc default-libmysqlclient-dev libmysqlclient-dev build-essential pkg-config && rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y gcc default-libmysqlclient-dev libmysqlclient-dev build-essential pkg-config
+RUN which pkg-config && pkg-config --version
 
 WORKDIR /app
 COPY . /app
