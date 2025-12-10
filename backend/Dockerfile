@@ -19,4 +19,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PORT=8080
 EXPOSE 8080
 # Use Gunicorn to serve Flask app and bind to $PORT
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app:app"]
+CMD ["bash", "-c", "gunicorn --bind 0.0.0.0:${PORT} app:app"]
